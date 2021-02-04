@@ -6,8 +6,13 @@
    
     <!-- Integration TO Business -->
  	  
-  	<mapping>
-  	
-    </mapping>
+   	<mapping>
+  		<class-a>com.sinensia.gestionmedica.backend.integration.model.UsuarioPL</class-a>
+    	<class-b>com.sinensia.gestionmedica.backend.business.model.Usuario</class-b>
+  	</mapping>
+  	   	<mapping>
+  		<class-a>com.sinensia.gestionmedica.backend.integration.model.LecturaPL</class-a>
+    	<class-b>com.sinensia.gestionmedica.backend.business.model.Lectura</class-b>
+  	</mapping>
   		  	  	
 </mappings>
