@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,21 +20,21 @@ import com.sinensia.gestionmedica.backend.business.services.UsuarioServices;
 public class UsuarioController {
 
 	@Autowired
-	private UsuarioServices usuariosServices;
+	private UsuarioServices usuarioServices;
 
 	@GetMapping("/{dni}")
 	public Usuario getById(@PathVariable("dni") String dni) {
-		return usuariosServices.read(dni);
+		return usuarioServices.read(dni);
 	}
 
-	// TODO
+	@GetMapping
 	public List<Usuario> getAll() {
-		return null;
+		return usuarioServices.getAll();
 	}
 
-	// TODO
+	@PostMapping
 	public Usuario create(@RequestBody Usuario usuario) {
-		return null;
+		return usuarioServices.save(usuario);
 	}
 
 }
