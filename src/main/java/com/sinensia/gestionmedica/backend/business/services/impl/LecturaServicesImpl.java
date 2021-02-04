@@ -59,13 +59,28 @@ public class LecturaServicesImpl implements LecturaServices {
 
 		Lectura createdLectura = dozerBeanMapper.map(createdLecturaPL, Lectura.class);
 
-		/* DUDA PARA PREGUNTAR A JORDI, NO MUESTRA TODOS LOS CAMPOS (ERROR EN EL MAPEO)*/
 		/*
-			System.out.println(lectura);
-			System.out.println(createdLecturaPL);
-			System.out.println(createdLectura);
-		*/
+		 * DUDA PARA PREGUNTAR A JORDI, NO MUESTRA TODOS LOS CAMPOS (ERROR EN EL MAPEO)
+		 */
+		/*
+		 * System.out.println(lectura); System.out.println(createdLecturaPL);
+		 * System.out.println(createdLectura);
+		 */
 		return createdLectura;
+	}
+
+	@Override
+	public List<Lectura> findByDniUsuario(String dni) {
+
+		List<LecturaPL> lecturasPL = lecturaPLRepository.findByDni(dni);
+
+		List<Lectura> lecturas = new ArrayList<>();
+
+		for (LecturaPL lecturaPL : lecturasPL) {
+			lecturas.add(dozerBeanMapper.map(lecturaPL, Lectura.class));
+		}
+
+		return lecturas;
 	}
 
 }

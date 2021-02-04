@@ -36,5 +36,10 @@ public class LecturaController {
 	public Lectura create(@RequestBody Lectura lectura) {
 		return lecturaServices.save(lectura);
 	}
+	
+	@GetMapping("/usuario/{dni}")
+	public List<Lectura> getAllById(@PathVariable("dni") String dni) {
+		return lecturaServices.findByDniUsuario(dni);
+	}
 
 }

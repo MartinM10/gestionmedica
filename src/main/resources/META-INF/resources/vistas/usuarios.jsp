@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>	
-	<h2>Listado de Almacenes</h2>
+	<h2>Listado de usuarios registrados</h2>
 	<table id="tabla">
 		<tr>
 			<th>DNI</th>
@@ -20,18 +20,18 @@
 			<th>ALTURA</th>
 			<th>OBSERVACIONES</th>
 		</tr>
-  		<c:forEach var="lectura" items="${lecturas}">
+  		<c:forEach var="usuario" items="${usuarios}">
 		<tr>
-			<td>${lectura.dni}</td>
-			<td>${lectura.nombre}</td>
-			<td>${lectura.apellido1}</td>
-			<td>${lectura.apellido2}</td>
-			<td>${lectura.sexo}</td>
+			<td><a href="lecturas/usuario/${usuario.dni}">${usuario.dni}</a></td>
+			<td>${usuario.nombre}</td>
+			<td>${usuario.apellido1}</td>
+			<td>${usuario.apellido2}</td>
+			<td>${usuario.sexo}</td>
 			<td>
-				<fmt:formatDate pattern="dd/MM/yyyy" value="${lectura.fechaNacimiento}" />
+				<fmt:formatDate pattern="dd/MM/yyyy" value="${usuario.fechaNacimiento}" />
 			</td>
-			<td>${lectura.altura}</td>
-			<td>${lectura.observaciones}</td>
+			<td>${usuario.altura}</td>
+			<td>${usuario.observaciones}</td>
 		</tr>
 		</c:forEach>
 	</table>
