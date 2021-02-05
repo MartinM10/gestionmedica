@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@taglib prefix="form"
- uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,22 +9,22 @@
 	<%@include file="header.jsp" %>
 	
 	
-	<form:form modelAttribute="usuario" action = "listado-usuarios" method = "POST" >
-        DNI: <input type = "text" name = "dni">
+	<form:form modelAttribute="usuarioForm" action = "/gestionmedica/alta-usuario" method = "POST" >
+        DNI: <input type = "text" name = "dni" value="123123123Q">
          <br />
-         Nombre: <input type = "text" name = "nombre" />
+         Nombre: <form:input type = "text" path = "nombre" value="nombre user" />
          <br>
-         Apellido 1: <input type = "text" name = "apellido1">
+         Apellido 1: <form:input type = "text" path = "apellido1" value="apell1"/>
          <br />
-         Apellido 2: <input type = "text" name = "apellido2">
+         Apellido 2: <form:input type = "text" path = "apellido2" value="apell2"/>
          <br />
-         Sexo: <input type = "text" name = "sexo">
+         Sexo: <form:input type = "text" path = "sexo" value="HOMBRE"/>
          <br />
-         Fecha Nacimiento: <input type = "text" name = "fechaNacimiento">
+         Fecha Nacimiento: <form:input type = "date" path = "fechaNacimiento"/>
          <br />
-         Altura: <input type = "text" name = "altura">
+         Altura: <form:input type = "text" path = "altura" value="175"/>
          <br />
-         Observaciones: <input type = "text" name = "obserc">
+         Observaciones: <form:input type = "text" path = "observaciones" value="ninguna"/>
          <br />
          <input type = "submit" value = "Submit" />
       </form:form>

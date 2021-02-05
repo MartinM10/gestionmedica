@@ -46,5 +46,10 @@ public class UsuarioController {
 	public List<Lectura> getAllById(@PathVariable("dni") String dni) {
 		return lecturaServices.findByDniUsuario(dni);
 	}
+	
+	@PostMapping("lecturas")
+	public Lectura create(@RequestBody Lectura lectura) {
+		return lecturaServices.save(lectura);
+	}
 
 }

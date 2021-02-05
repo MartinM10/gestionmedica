@@ -59,13 +59,6 @@ public class LecturaServicesImpl implements LecturaServices {
 
 		Lectura createdLectura = dozerBeanMapper.map(createdLecturaPL, Lectura.class);
 
-		/*
-		 * DUDA PARA PREGUNTAR A JORDI, NO MUESTRA TODOS LOS CAMPOS (ERROR EN EL MAPEO)
-		 */
-		/*
-		 * System.out.println(lectura); System.out.println(createdLecturaPL);
-		 * System.out.println(createdLectura);
-		 */
 		return createdLectura;
 	}
 

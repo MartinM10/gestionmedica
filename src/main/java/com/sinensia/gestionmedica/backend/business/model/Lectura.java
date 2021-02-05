@@ -3,17 +3,13 @@ package com.sinensia.gestionmedica.backend.business.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Lectura implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private int id;
-	
-	@JsonIgnore
 	private Usuario usuario;
-	
 	private Date fechaCreacion;
 	private Double longitud;
 	private Double latitud;
