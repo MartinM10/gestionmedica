@@ -5,6 +5,7 @@
 	<%@include file="head.jsp" %>
 </head>
 <body>
+	
 	<%@include file="header.jsp" %>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut imperdiet leo.
 	 Aenean finibus lectus nec ante efficitur, in consequat metus congue. 

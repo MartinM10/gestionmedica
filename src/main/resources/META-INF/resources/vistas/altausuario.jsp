@@ -10,23 +10,58 @@
 	
 	
 	<form:form modelAttribute="usuarioForm" action = "/gestionmedica/alta-usuario" method = "POST" >
-        DNI: <input type = "text" name = "dni" value="123123123Q">
-         <br />
-         Nombre: <form:input type = "text" path = "nombre" value="nombre user" />
-         <br>
-         Apellido 1: <form:input type = "text" path = "apellido1" value="apell1"/>
-         <br />
-         Apellido 2: <form:input type = "text" path = "apellido2" value="apell2"/>
-         <br />
-         Sexo: <form:input type = "text" path = "sexo" value="HOMBRE"/>
-         <br />
-         Fecha Nacimiento: <form:input type = "date" path = "fechaNacimiento"/>
-         <br />
-         Altura: <form:input type = "text" path = "altura" value="175"/>
-         <br />
-         Observaciones: <form:input type = "text" path = "observaciones" value="ninguna"/>
-         <br />
+	
+		<fieldset>
+  			<legend>Alta de usuario</legend>
+	
+	
+	
+	     <div>
+	     	<label for="dni">DNI:</label>
+	     	<input type = "text" name = "dni">
+	     </div>	
+	     
+	     <div>
+	     	<label for="nombre">Nombre:</label>
+	     	<form:input type = "text" path = "nombre" value="nombre user" />
+	     </div>	
+	     
+	     <div>
+	     	<label for="apell1">Apellido1:</label>
+	     	<form:input type = "text" path = "apellido1" value="apell1"/>
+	     </div>	
+	     
+	     <div>
+	     	<label for="apell2">Apellido2:</label>
+	     	<form:input type = "text" path = "apellido2" value="apell2"/>
+	     </div>
+	     
+	     <div>
+	     	<label for="sexo">Sexo:</label>
+	     	<form:select  path="sexo">
+    			<form:option value="HOMBRE"> Hombre</form:option>
+    			<form:option value="MUJER"> Mujer</form:option>
+    	 	</form:select>
+	     </div>
+  		 <!--  Sexo: <form:input type = "text" path = "sexo" value="HOMBRE"/>-->
+
+		 <div>
+	     	<label for="fNac">Fecha Nacimiento:</label>
+	     	<form:input type = "date" path = "fechaNacimiento"/>
+	     </div>
+		
+		<div>
+	     	<label for="altura">Altura:</label>
+	     	<form:input type = "text" path = "altura" value="175"/>
+	     </div>
+	     
+	     <div>
+	     	<label for="observaciones">Observaciones:</label>
+	     	<form:input type = "text" path = "observaciones" value="ninguna"/>
+	     </div>
+         
          <input type = "submit" value = "Submit" />
+         </fieldset>
       </form:form>
 
 	<%@include file="footer.jsp" %>
