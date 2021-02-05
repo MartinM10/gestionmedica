@@ -72,7 +72,7 @@ public class LecturaServicesImpl implements LecturaServices {
 	@Override
 	public List<Lectura> findByDniUsuario(String dni) {
 
-		List<LecturaPL> lecturasPL = lecturaPLRepository.findByDni(dni);
+		List<LecturaPL> lecturasPL = lecturaPLRepository.findByUsuarioDni(dni);
 
 		List<Lectura> lecturas = new ArrayList<>();
 

@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="form"
+ uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 	<%@include file="header.jsp" %>
 	
 	
-	<form action = "listado-usuarios" method = "POST">
+	<form:form modelAttribute="usuario" action = "listado-usuarios" method = "POST" >
         DNI: <input type = "text" name = "dni">
          <br />
          Nombre: <input type = "text" name = "nombre" />
@@ -26,7 +28,7 @@
          Observaciones: <input type = "text" name = "obserc">
          <br />
          <input type = "submit" value = "Submit" />
-      </form>
+      </form:form>
 
 	<%@include file="footer.jsp" %>
 </body>

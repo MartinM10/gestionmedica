@@ -22,7 +22,7 @@
 		</tr>
   		<c:forEach var="usuario" items="${usuarios}">
 		<tr>
-			<td><a href="lecturas/usuario/${usuario.dni}">${usuario.dni}</a></td>
+		  	<td><a href="/gestionmedica/lecturas/${usuario.dni}/usuario">${usuario.dni}</a></td>
 			<td>${usuario.nombre}</td>
 			<td>${usuario.apellido1}</td>
 			<td>${usuario.apellido2}</td>

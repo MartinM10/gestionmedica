@@ -16,7 +16,7 @@ import com.sinensia.gestionmedica.backend.business.services.LecturaServices;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/lecturas")
+@RequestMapping("api/v1/lecturas")
 public class LecturaController {
 
 	@Autowired
@@ -37,9 +37,5 @@ public class LecturaController {
 		return lecturaServices.save(lectura);
 	}
 	
-	@GetMapping("/usuario/{dni}")
-	public List<Lectura> getAllById(@PathVariable("dni") String dni) {
-		return lecturaServices.findByDniUsuario(dni);
-	}
-
+	
 }

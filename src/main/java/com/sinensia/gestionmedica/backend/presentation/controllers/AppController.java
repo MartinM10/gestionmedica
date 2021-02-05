@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import com.sinensia.gestionmedica.backend.business.model.Lectura;
 import com.sinensia.gestionmedica.backend.business.model.Usuario;
 import com.sinensia.gestionmedica.backend.business.services.LecturaServices;
@@ -50,7 +51,7 @@ public class AppController {
 		return "lecturas";
 	}
 
-	@RequestMapping("/lecturas/usuario/{dni}")
+	@RequestMapping("/lecturas/{dni}/usuario")
 	public String getLecturasByUsuario(@PathVariable String dni, Model model) {
 		List<Lectura> lecturas = lecturaServices.findByDniUsuario(dni);
 		
@@ -59,13 +60,16 @@ public class AppController {
 	}
 	
 	
-	@GetMapping("/crear-usuario")
+	@GetMapping("/alta-usuario")
 	public String formAltaUsuario() {
 		return "altausuario";
 	}
 	
-	@PostMapping("/crear-usuario")
+	@PostMapping("/alta-usuario")
 	public String formAltaUsuarioPost() {
+
+		//TODO redirect usuarios/dni
+		
 		return "usuarios";
 	}
 

@@ -11,16 +11,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sinensia.gestionmedica.backend.business.model.Lectura;
 import com.sinensia.gestionmedica.backend.business.model.Usuario;
+import com.sinensia.gestionmedica.backend.business.services.LecturaServices;
 import com.sinensia.gestionmedica.backend.business.services.UsuarioServices;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/usuarios")
+@RequestMapping("api/v1/usuarios")
 public class UsuarioController {
 
 	@Autowired
 	private UsuarioServices usuarioServices;
+	
+	@Autowired
+	private LecturaServices lecturaServices;
 
 	@GetMapping("/{dni}")
 	public Usuario getById(@PathVariable("dni") String dni) {
@@ -35,6 +40,11 @@ public class UsuarioController {
 	@PostMapping
 	public Usuario create(@RequestBody Usuario usuario) {
 		return usuarioServices.save(usuario);
+	}
+	
+	@GetMapping("{dni}/lecturas")
+	public List<Lectura> getAllById(@PathVariable("dni") String dni) {
+		return lecturaServices.findByDniUsuario(dni);
 	}
 
 }
